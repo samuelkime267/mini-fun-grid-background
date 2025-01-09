@@ -14,7 +14,7 @@ function App() {
       const q = gsap.utils.selector(containerRef.current);
       const gridCells = q(".grid-cell");
 
-      gridCells.forEach((cell, i) => {
+      gridCells.forEach((cell) => {
         cell.addEventListener("mouseenter", () => {
           gsap.to(cell, {
             backgroundColor: "white",
@@ -42,9 +42,9 @@ function App() {
 
   return (
     <main ref={containerRef} className="w-full h-screen overflow-hidden">
-      {heightArr.map((h, i) => (
+      {heightArr.map((_, i) => (
         <div key={i} className="flex">
-          {widthArr.map((w, j) => (
+          {widthArr.map((_, j) => (
             <div
               key={j}
               style={{ width: gridSize, height: gridSize }}
